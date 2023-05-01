@@ -1,9 +1,7 @@
 package se.kth.iv1350.checkoutproc.controller;
 
 import se.kth.iv1350.checkoutproc.integration.*;
-import se.kth.iv1350.checkoutproc.model.Change;
-import se.kth.iv1350.checkoutproc.model.Sale;
-import se.kth.iv1350.checkoutproc.model.SaleInfoDTO;
+import se.kth.iv1350.checkoutproc.model.*;
 
 public class Controller {
        private Printer printer;
@@ -20,23 +18,55 @@ public class Controller {
        }
 
        public void initiateSale(){
-               sale = new Sale();
-               //TODO?
+               sale = new Sale(accountingHandler, inventoryHandler, printer);
        }
 
-       public void addItems(int itemID, int count){
-               //TODO
-       }
-       public SaleInfoDTO getSaleInfo(){
-               //TODO
-               return null;
-       }
+        /**
+         * adds mumber of an item type to the {@link Sale}.
+         * @param itemID unique item identifier
+         * @param count the amount of the item to be added
+         *
+         * @return the item with the specified identifier,
+         * if such item does not exist, no item will be added, and {@link null} will be returned.
+         */
+        public ItemDTO addItem(int itemID, int count){
+                //TODO return correct item
+                ItemDTO itemData = inventoryHandler.fetchItem(itemID);
+                if(itemData == null)
+                        return null;
+                sale.addItems(itemData, count);
+                return itemData;
+        }
+
+
+        /**
+         * adds a single item to the {@link Sale}
+         * @param itemID unique item idenifier
+         * @return the item added, null if no such item exists
+         */
+        public ItemDTO addItem(int itemID){
+               return addItem(itemID, 1);
+        }
+
+        /**
+         * fetches information about the sale
+         * @return a dto with the requested sale info
+         */
+        public SaleInfoDTO fetchSaleInfo(){
+                return sale.fetchSaleInfo();
+        }
         public ItemDTO getItemInfo(int itemID){
                //TODO
                 return null;
 
         }
-        public Change endSale(){
+
+        /**
+         * This method ends the sale and returns the amount of change
+         * @param payment the payment
+         * @return the amount of change to be given back to the customer
+         */
+        public Change endSale(Payment payment){
                //TODO
                 return null;
         }

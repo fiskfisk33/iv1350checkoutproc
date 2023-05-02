@@ -16,7 +16,7 @@ public class DiscountsDTO {
          * cartDiscount is stored as a multiplier
          * eg, a discount of 5% is 0.95
          */
-        private BigDecimal cartDiscountMultiplier;
+        private BigDecimal cartDiscount;
 
         /**
          * creates a {@link DiscountsDTO} with a list of {@link ItemDiscount}s and a cart discount
@@ -27,7 +27,9 @@ public class DiscountsDTO {
          */
         public DiscountsDTO(AbstractMap<Integer, ItemDiscount> itemDiscounts, BigDecimal cartDiscount) {
                 this.itemDiscounts = itemDiscounts;
-                this.cartDiscountMultiplier = BigDecimal.ONE.subtract(cartDiscount);
+                if(cartDiscount == null)
+                        cartDiscount = BigDecimal.ZERO;
+                this.cartDiscount = BigDecimal.ONE.subtract(cartDiscount);
         }
 
         /**
@@ -44,6 +46,6 @@ public class DiscountsDTO {
          * @return
          */
         public BigDecimal getCartDiscount() {
-                return cartDiscountMultiplier;
+                return cartDiscount;
         }
 }

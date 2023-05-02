@@ -29,7 +29,7 @@ public class DiscountHandler {
                 itemDiscounts.put(itemDiscount3.getItemID(), itemDiscount3);
                 itemDiscounts.put(itemDiscount4.getItemID(), itemDiscount4);
 
-                DiscountsDTO discountsDTO = new DiscountsDTO(itemDiscounts, new BigDecimal("10%"));
+                DiscountsDTO discountsDTO = new DiscountsDTO(itemDiscounts, new BigDecimal("0.10"));
 
                 return discountsDTO;
         }

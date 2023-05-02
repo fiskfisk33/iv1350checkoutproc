@@ -8,12 +8,12 @@ import java.util.HashMap;
  * this class is the interface between the inventory database and the rest of the program.
  */
 public class InventoryHandler {
+
         /**
          * for now this class is mostly placeholder.
          * since we have no actual database access
          * we fake it in this class.
          */
-
         private AbstractMap<Integer, ItemDTO> items;
 
         /**

@@ -18,13 +18,15 @@ class ItemDTOTest {
         BigDecimal price;
         @BeforeEach
         void setUp() {
+                itemDTO = createTestItemDTO();
+        }
+        public ItemDTO createTestItemDTO(){
                 itemID = 625;
                 description = "test item";
                 vat = new BigDecimal("0.25");
                 price = new BigDecimal(666);
 
-                itemDTO = new ItemDTO(itemID,description,vat,price);
-
+                return new ItemDTO(itemID,description,vat,price);
         }
 
         @AfterEach

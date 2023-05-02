@@ -72,5 +72,6 @@ public class Item {
                 this.description = itemDTO.getDescription();
                 this.vat = itemDTO.getVat();
                 this.price = itemDTO.getPrice();
+                this.discount = BigDecimal.ZERO;
         }
 }

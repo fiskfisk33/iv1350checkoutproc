@@ -4,6 +4,9 @@ import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.*;
 
+/**
+ * collect the available information about a {@link Sale}
+ */
 public class SaleInfoDTO implements Iterable<Item> {
         private final BigDecimal totalPrice;
         private final BigDecimal totalVAT;
@@ -14,6 +17,15 @@ public class SaleInfoDTO implements Iterable<Item> {
         private final AbstractMap<Item,Integer> items;
 
 
+        /**
+         * Creates a SaleInfoDTO from a collection of information about a sale
+         * @param totalPrice
+         * @param totalVAT
+         * @param payment
+         * @param change
+         * @param saleTime
+         * @param cart
+         */
         SaleInfoDTO(BigDecimal totalPrice, BigDecimal totalVAT, Payment payment, Change change, Instant saleTime, Cart cart){
                 this.totalPrice = totalPrice;
                 this.totalVAT = totalVAT;
@@ -25,34 +37,59 @@ public class SaleInfoDTO implements Iterable<Item> {
                         items.put(item, cart.getItemCount(item));
                 }
         }
+
+        /**
+         * Copy constructor, makes a copy of another {@link SaleInfoDTO}
+         * @param saleInfo the object to copy
+         */
         SaleInfoDTO(SaleInfoDTO saleInfo){
                 totalPrice = saleInfo.totalPrice;
                 totalVAT = saleInfo.totalVAT;
                 payment = saleInfo.payment;
                 change = saleInfo.change;
                 saleTime = saleInfo.saleTime;
-                items = saleInfo.items;
+                items = new HashMap<Item, Integer>(saleInfo.items);
         }
         public int getItemCount(Item item){
                 return items.get(item);
         }
 
+        /**
+         * Gets the price without vat
+         * @return total price without vat
+         */
         public BigDecimal getTotalPrice() {
                 return totalPrice;
         }
 
+        /**
+         * gets the payment
+         * @return the payment
+         */
         public Payment getPayment(){
                 return payment;
         }
 
+        /**
+         * gets the Change
+         * @return change
+         */
         public Change getChange() {
                 return change;
         }
 
+        /**
+         * gets the total VAT
+         * @return total VAT
+         */
         public BigDecimal getTotalVAT() {
                 return totalVAT;
         }
 
+        /**
+         * gets the sale time
+         * @return sale time
+         */
         public Instant getSaleTime() {
                 return saleTime;
         }

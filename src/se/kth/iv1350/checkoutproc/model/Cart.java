@@ -12,13 +12,21 @@ import java.util.Iterator;
  */
 public class Cart implements Iterable<Item>{
         private AbstractMap<Integer, CartEntry> items;
+        private BigDecimal cartDiscount;
 
+        /**
+         * creates a Cart
+         */
         Cart() {
                 items = new HashMap<>();
+                cartDiscount = BigDecimal.ONE;
         }
 
-
-
+        /**
+         * Adds one or many items (of the same type) to the {@link Cart}
+         * @param itemData a dto with the item info
+         * @param count how many of the item to add
+         */
         void addItems(ItemDTO itemData, int count){
                 int itemID = itemData.getItemID();
                 if (items.containsKey(itemID))
@@ -37,7 +45,7 @@ public class Cart implements Iterable<Item>{
                 for(var entry : items.entrySet())
                         totalPrice = totalPrice.add(
                                 entry.getValue().getTotalPrice());
-                return totalPrice;
+                return totalPrice.multiply(cartDiscount);
         }
 
         /**
@@ -49,7 +57,7 @@ public class Cart implements Iterable<Item>{
                 for(var entry : items.entrySet())
                          totalVAT = totalVAT.add(
                                 entry.getValue().getTotalVAT());
-                return  totalVAT;
+                return  totalVAT.multiply(cartDiscount);
         }
 
         /**
@@ -62,6 +70,14 @@ public class Cart implements Iterable<Item>{
                 //TODO handle errors (item does not exist)
                 int itemID = item.getItemID();
                 return items.get(itemID).getCount();
+        }
+
+	/**
+	 * applies a discount to the whole cart
+	 * @param cartDiscount the discount as a multiplier (a 5% would be 0.95)
+	 */
+        public void applyCartDiscount(BigDecimal cartDiscount){
+		this.cartDiscount = this.cartDiscount.multiply(cartDiscount);
         }
 
         /**
@@ -110,7 +126,7 @@ public class Cart implements Iterable<Item>{
          * in order for outside classes to be able to use {@link Cart} as a collection of items,
          * and thereby keep {@link CartEntry} private, We implement this iterator.
          *
-         * (heavily inspiret by Nateowami's answer on https://stackoverflow.com/questions/21512250/how-can-i-make-my-class-iterable-so-i-can-use-foreach-syntax)
+         * (heavily inspired by Nateowami's answer on https://stackoverflow.com/questions/21512250/how-can-i-make-my-class-iterable-so-i-can-use-foreach-syntax)
          * @return the iterator
          */
         @Override

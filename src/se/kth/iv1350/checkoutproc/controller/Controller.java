@@ -3,6 +3,10 @@ package se.kth.iv1350.checkoutproc.controller;
 import se.kth.iv1350.checkoutproc.integration.*;
 import se.kth.iv1350.checkoutproc.model.*;
 
+/**
+ * represents the Controller, an interface between the view and data related classes
+ * and the internal model.
+ */
 public class Controller {
        private Printer printer;
        private InventoryHandler inventoryHandler;
@@ -10,6 +14,9 @@ public class Controller {
        private AccountingHandler accountingHandler;
        private Sale sale;
 
+        /**
+         * Initializes a controller with all it's associated connections
+         */
        public Controller(){
                printer = new Printer();
                inventoryHandler = new InventoryHandler();
@@ -17,6 +24,9 @@ public class Controller {
                accountingHandler = new AccountingHandler();
        }
 
+        /**
+         * initiates a sale, represented as an instance of {@link Sale}
+         */
        public void initiateSale(){
                sale = new Sale(accountingHandler, inventoryHandler, printer);
        }
@@ -30,7 +40,6 @@ public class Controller {
          * if such item does not exist, no item will be added, and {@link null} will be returned.
          */
         public ItemDTO addItem(int itemID, int count){
-                //TODO return correct item
                 ItemDTO itemData = inventoryHandler.fetchItem(itemID);
                 if(itemData == null)
                         return null;
@@ -55,23 +64,25 @@ public class Controller {
         public SaleInfoDTO fetchSaleInfo(){
                 return sale.fetchSaleInfo();
         }
-        public ItemDTO getItemInfo(int itemID){
-               //TODO
-                return null;
 
+        /**d returns the amount of change
+         *          * @param payment the payment
+         *          * @return the amount of change
+         * This method ends the sale an to be given back to the customer
+         */
+        public Change endSale(Payment payment){
+                Change change = sale.endSale(payment);
+                sale = null;
+                return change;
         }
 
         /**
-         * This method ends the sale and returns the amount of change
-         * @param payment the payment
-         * @return the amount of change to be given back to the customer
+         * Fetches discounts from the discount db and applies them to the Sale
+         * @param customerID unique customer ID
          */
-        public Change endSale(Payment payment){
-               //TODO
-                return null;
-        }
         public void requestDiscount(int customerID){
-               //TODO
+               DiscountsDTO discountsDTO = discountHandler.fetchDiscounts(customerID);
+               sale.applyDiscounts(discountsDTO);
         }
 
 }

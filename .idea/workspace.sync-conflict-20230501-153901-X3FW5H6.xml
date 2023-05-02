@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e46175d7-cfd2-4bf1-9474-70c197739d73" name="Changes" comment="this is a commit">
+      <change afterPath="$PROJECT_DIR$/src/se/kth/iv1350/checkoutproc/model/MonetaryAmount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/se/kth/iv1350/checkoutproc/model/Payment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/se/kth/iv1350/checkoutproc/model/VAT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/se/kth/iv1350/checkoutproc/integration/InventoryHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkoutproc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/checkoutproc.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/kth/iv1350/checkoutproc/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/kth/iv1350/checkoutproc/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/kth/iv1350/checkoutproc/integration/AccountingHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/kth/iv1350/checkoutproc/integration/AccountingHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/kth/iv1350/checkoutproc/integration/InventoryHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/kth/iv1350/checkoutproc/integration/InventoryHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/kth/iv1350/checkoutproc/integration/ItemDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/kth/iv1350/checkoutproc/integration/ItemDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/kth/iv1350/checkoutproc/integration/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/kth/iv1350/checkoutproc/integration/Printer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/kth/iv1350/checkoutproc/model/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/kth/iv1350/checkoutproc/model/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/kth/iv1350/checkoutproc/model/CartEntry.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/kth/iv1350/checkoutproc/model/Change.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/kth/iv1350/checkoutproc/model/Change.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/kth/iv1350/checkoutproc/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/kth/iv1350/checkoutproc/model/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/kth/iv1350/checkoutproc/model/Sale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/kth/iv1350/checkoutproc/model/Sale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/kth/iv1350/checkoutproc/model/SaleInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/kth/iv1350/checkoutproc/model/SaleInfoDTO.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2P9LfYUitWNlttuCM01be7Y9CDB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/FiskFisk33/Documents/kth/ObjectOrientedDesign/checkoutproc&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/home/fisk/KTH/ObjectOrientedDesign/checkoutproc/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.folding&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="se.kth.iv1350.checkoutproc.integration" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="InventoryHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="checkoutproc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="se.kth.iv1350.checkoutproc.integration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="se.kth.iv1350.checkoutproc.integration" />
+      <option name="MAIN_CLASS_NAME" value="se.kth.iv1350.checkoutproc.integration.InventoryHandlerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.InventoryHandlerTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e46175d7-cfd2-4bf1-9474-70c197739d73" name="Changes" comment="" />
+      <created>1682864454577</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1682864454577</updated>
+    </task>
+    <task id="LOCAL-00001" summary="init">
+      <created>1682864981443</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682864981443</updated>
+    </task>
+    <task id="LOCAL-00002" summary="init">
+      <created>1682864991934</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682864991934</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <MESSAGE value="this is a commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="this is a commit" />
+  </component>
+</project>

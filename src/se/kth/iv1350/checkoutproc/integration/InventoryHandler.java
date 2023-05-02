@@ -1,12 +1,12 @@
 package se.kth.iv1350.checkoutproc.integration;
 
-import se.kth.iv1350.checkoutproc.model.Item;
-
 import java.math.BigDecimal;
 import java.util.AbstractMap;
 import java.util.HashMap;
-import java.util.Map;
 
+/**
+ * this class is the interface between the inventory database and the rest of the program.
+ */
 public class InventoryHandler {
         /**
          * for now this class is mostly placeholder.

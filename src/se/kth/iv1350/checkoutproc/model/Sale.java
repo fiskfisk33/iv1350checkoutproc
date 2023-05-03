@@ -72,9 +72,9 @@ public class Sale {
                 }
 
                 this.payment = payment;
-                BigDecimal priceWithVat = cart.getTotalPrice().add(cart.getTotalPrice());
+                BigDecimal priceWithVat = (cart.getTotalPrice().add(cart.getTotalVAT()));
                 this.change = new Change(
-                                priceWithVat.subtract(payment.getAmount()));
+                        payment.getAmount().subtract(priceWithVat));
 
                 accountingHandler.logSale(fetchSaleInfo());
 

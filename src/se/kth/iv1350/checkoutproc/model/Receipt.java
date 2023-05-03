@@ -2,9 +2,9 @@ package se.kth.iv1350.checkoutproc.model;
 
 /**
  * models a reciept for a sale
+ * for now it's simply a wrapped SaleInfoDTO
  */
 public class Receipt extends SaleInfoDTO {
-
 
         /**
          * creates the Receipt from sale info

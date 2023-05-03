@@ -3,6 +3,7 @@ package se.kth.iv1350.checkoutproc.model;
 import se.kth.iv1350.checkoutproc.integration.ItemDTO;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.AbstractMap;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -58,7 +59,7 @@ public class Cart implements Iterable<Item>{
                 for(var entry : items.entrySet())
                          totalVAT = totalVAT.add(
                                 entry.getValue().getTotalVAT());
-                return  totalVAT.multiply(cartDiscount);
+                return  totalVAT.multiply(cartDiscount).setScale(2, RoundingMode.HALF_DOWN);
         }
 
         /**
@@ -104,7 +105,8 @@ public class Cart implements Iterable<Item>{
                  */
                 public BigDecimal getTotalPrice(){
                         BigDecimal count = BigDecimal.valueOf(this.count);
-                        return item.getPrice().multiply(count);
+                        BigDecimal totalPrice = item.getPrice().multiply(count);
+                        return totalPrice;
                 }
 
                 /**
@@ -113,7 +115,7 @@ public class Cart implements Iterable<Item>{
                  */
                 public BigDecimal getTotalVAT(){
                         BigDecimal vat = item.getVat();
-                        return getTotalPrice().multiply(vat);
+                        return getTotalPrice().multiply(vat).setScale(2, RoundingMode.HALF_DOWN);
                 }
 
                 public int increaseCount(int incr){

@@ -44,7 +44,7 @@ public class Item {
          * @return the price
          */
         public BigDecimal getPrice() {
-                return price;
+                return price.subtract(discount);
         }
 
         /**

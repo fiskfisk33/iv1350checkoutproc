@@ -94,6 +94,10 @@ public class SaleInfoDTO implements Iterable<Item> {
                 return saleTime;
         }
 
+        public int getItemQuantity(Item item){
+                return items.get(item);
+        }
+
         /**
          * Make this class iterable so we easily can use it to transfer a list
          * of {@link Item}'s and their associated amounts.

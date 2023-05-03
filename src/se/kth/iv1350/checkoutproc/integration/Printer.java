@@ -15,5 +15,6 @@ public class Printer {
          */
         public void printReceipt(Receipt receipt){
                 //TODO dummy function
+                System.out.print(receipt.fetchReceiptText());
         }
 }

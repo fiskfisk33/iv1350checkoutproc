@@ -33,6 +33,7 @@ public class Cart implements Iterable<Item>{
                         items.get(itemID).increaseCount(count);
                 else{
                        CartEntry cartEntry = new CartEntry(new Item(itemData), count);
+                       items.put(itemID, cartEntry);
                 }
         }
 
@@ -68,7 +69,12 @@ public class Cart implements Iterable<Item>{
          */
         public int getItemCount(Item item){
                 //TODO handle errors (item does not exist)
-                int itemID = item.getItemID();
+                return getItemCount(item.getItemID());
+        }
+        public int getItemCount(ItemDTO itemDTO){
+                return getItemCount(itemDTO.getItemID());
+        }
+        public int getItemCount(int itemID){
                 return items.get(itemID).getCount();
         }
 

@@ -19,7 +19,7 @@ public class Receipt extends SaleInfoDTO {
         }
         public String fetchReceiptText(){
                 String receiptstring = "********************************* \n";
-                receiptstring = "*Receipt:------------------------ \n";
+                receiptstring = "\n*Receipt:************************ \n";
                 receiptstring += "* ";
                 receiptstring += getSaleTime().toString();
                 receiptstring += "\n* - \n";

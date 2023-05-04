@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e46175d7-cfd2-4bf1-9474-70c197739d73" name="Changes" comment="View implemented">
+      <change beforePath="$PROJECT_DIR$/src/se/kth/iv1350/checkoutproc/model/Receipt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/kth/iv1350/checkoutproc/model/Receipt.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectId" id="2P9LfYUitWNlttuCM01be7Y9CDB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TODO_SCOPE": "All Places",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "C:/Users/FiskFisk33/Documents/kth/ObjectOrientedDesign/checkoutproc",
+    "onboarding.tips.debug.path": "/home/fisk/KTH/ObjectOrientedDesign/checkoutproc/src/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="se.kth.iv1350.checkoutproc.controller" />
+      <recent name="se.kth.iv1350.checkoutproc.model" />
+      <recent name="se.kth.iv1350.checkoutproc.integration" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main program">
+    <configuration name="Main program" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="se.kth.iv1350.checkoutproc.startup.Main" />
+      <module name="checkoutproc" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in checkoutproc" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="checkoutproc" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InventoryHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="checkoutproc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="se.kth.iv1350.checkoutproc.integration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="se.kth.iv1350.checkoutproc.integration" />
+      <option name="MAIN_CLASS_NAME" value="se.kth.iv1350.checkoutproc.integration.InventoryHandlerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main program" />
+      <item itemvalue="JUnit.All in checkoutproc" />
+      <item itemvalue="JUnit.InventoryHandlerTest" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in checkoutproc" />
+        <item itemvalue="JUnit.InventoryHandlerTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e46175d7-cfd2-4bf1-9474-70c197739d73" name="Changes" comment="" />
+      <created>1682864454577</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1682864454577</updated>
+    </task>
+    <task id="LOCAL-00001" summary="init">
+      <created>1682864981443</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682864981443</updated>
+    </task>
+    <task id="LOCAL-00002" summary="init">
+      <created>1682864991934</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682864991934</updated>
+    </task>
+    <task id="LOCAL-00003" summary="more implementation">
+      <created>1682952086095</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682952086095</updated>
+    </task>
+    <task id="LOCAL-00004" summary="more implementation">
+      <created>1682953077131</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1682953077131</updated>
+    </task>
+    <task id="LOCAL-00005" summary="more implementation">
+      <created>1683015853992</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683015853992</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Implementation">
+      <created>1683024160604</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1683024160604</updated>
+    </task>
+    <task id="LOCAL-00007" summary="DiscountsDTO test implemented">
+      <created>1683030260237</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1683030260237</updated>
+    </task>
+    <task id="LOCAL-00008" summary="ItemDTO test implemented">
+      <created>1683031528285</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1683031528286</updated>
+    </task>
+    <task id="LOCAL-00009" summary="InventoryHandler test implemented">
+      <created>1683032320561</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1683032320561</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Cart Test Implemented">
+      <created>1683103450948</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1683103450948</updated>
+    </task>
+    <task id="LOCAL-00011" summary="cart bugfix">
+      <created>1683103462503</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1683103462503</updated>
+    </task>
+    <task id="LOCAL-00012" summary="AccountingHandlerTest implemented">
+      <created>1683103479055</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1683103479056</updated>
+    </task>
+    <task id="LOCAL-00013" summary="SaleTest implemented, and debugged">
+      <created>1683118728980</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1683118728980</updated>
+    </task>
+    <task id="LOCAL-00014" summary="ControllerTest implemented">
+      <created>1683123432999</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1683123432999</updated>
+    </task>
+    <task id="LOCAL-00015" summary="View implemented">
+      <created>1683129538359</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1683129538359</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <MESSAGE value="more implementation" />
+    <MESSAGE value="first implementation don" />
+    <MESSAGE value="Implementation" />
+    <MESSAGE value="DiscountsDTO test implemented" />
+    <MESSAGE value="ItemDTO test implemented" />
+    <MESSAGE value="InventoryHandler test implemented" />
+    <MESSAGE value="Cart Test Implemented" />
+    <MESSAGE value="cart bugfix" />
+    <MESSAGE value="AccountingHandlerTest implemented" />
+    <MESSAGE value="SaleTest implemented, and debugged" />
+    <MESSAGE value="ControllerTest implemented" />
+    <MESSAGE value="View implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="View implemented" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tests/se/kth/iv1350/checkoutproc/controller/ControllerTest.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -27,3 +27,5 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+/.idea/intellij-javadocs-4.0.1.xml
+~

@@ -15,12 +15,14 @@ public class InventoryHandler {
          * we fake it in this class.
          */
         private AbstractMap<Integer, ItemDTO> items;
+        private Logger logger;
 
         /**
          * placeholder constructor
          * This creates a "fake database" with a few items in it.
          */
-        public InventoryHandler(){
+        public InventoryHandler(Logger logger){
+                this.logger = logger;
                 //TODO this is placeholder stuff
                 items = new HashMap<>();
                 createPlaceholderEntry(new ItemDTO(12345, "Cordless Drill", new BigDecimal(.25), new BigDecimal(1299)));
@@ -49,6 +51,13 @@ public class InventoryHandler {
          * @throws ItemNotInDbException if no item with supplied itemID found in db
          */
         public ItemDTO fetchItem(int itemID) throws ItemNotInDbException {
+                 //dummy database error
+                 if(itemID == 218){
+                         //this simulates a database unreachable error
+                         RuntimeException e = new DbUnreachableException("database not responding to request");
+                         logger.log(e.toString());
+                         throw e;
+                 }
                  ItemDTO item = items.get(itemID);
                  if (item == null)
                          throw new ItemNotInDbException("Item with id \"" + itemID + "\" not found in db");

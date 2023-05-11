@@ -18,8 +18,9 @@ public class Controller {
          * Initializes a controller with all it's associated connections
          */
        public Controller(){
+               LogFileWriter logFileWriter = new LogFileWriter("runtime");
                printer = new Printer();
-               inventoryHandler = new InventoryHandler();
+               inventoryHandler = new InventoryHandler(logFileWriter);
                discountHandler = new DiscountHandler();
                accountingHandler = new AccountingHandler();
        }
@@ -39,14 +40,17 @@ public class Controller {
          * @return the item with the specified identifier,
          *         if such item does not exist, no item will be added, and {@link null} will be returned.
          * @throws NoSuchItemException if no item matching the supplied itemID is found
+         * @throws InventoryException if there was an error when trying to access the inventory
          */
-        public ItemDTO addItem(int itemID, int count) throws NoSuchItemException {
+        public ItemDTO addItem(int itemID, int count) throws NoSuchItemException, InventoryException {
                 try {
                         ItemDTO itemData = inventoryHandler.fetchItem(itemID);
                         sale.addItems(itemData, count);
                         return itemData;
                 } catch (ItemNotInDbException e) {
                         throw new NoSuchItemException("No item with ID "+itemID+" found", e);
+                } catch (DbUnreachableException e){
+                        throw new InventoryException(e);
                 }
         }
 
@@ -54,10 +58,14 @@ public class Controller {
 
         /**
          * adds a single item to the {@link Sale}
-         * {@inheritDoc}
+         * @param itemID unique item identifier
+         * @return the item with the specified identifier,
+         *         if such item does not exist, no item will be added, and {@link null} will be returned.
+         * @throws NoSuchItemException if no item matching the supplied itemID is found
+         * @throws InventoryException if there was an error when trying to access the inventory
+         *
          */
-
-        public ItemDTO addItem(int itemID) throws NoSuchItemException {
+        public ItemDTO addItem(int itemID) throws NoSuchItemException, InventoryException {
                return addItem(itemID, 1);
         }
 

@@ -1,6 +1,7 @@
 package se.kth.iv1350.checkoutproc.view;
 
 import se.kth.iv1350.checkoutproc.controller.Controller;
+import se.kth.iv1350.checkoutproc.controller.InventoryException;
 import se.kth.iv1350.checkoutproc.integration.ItemDTO;
 import se.kth.iv1350.checkoutproc.controller.NoSuchItemException;
 import se.kth.iv1350.checkoutproc.model.Change;
@@ -35,12 +36,14 @@ public class View {
                 System.out.println("---Ready To Scan---");
                 scanItem(12345);
                 scanItem(38940);
+                scanItem(218);
                 scanItem(12425);
                 scanItem(48950, 10);
                 scanItem(1599);
                 scanItem(38940);
                 scanItem( 183243, 4);
                 scanItem(1738, 3);
+                scanItem(218, 3);
                 scanItem(47895);
                 scanItem(78397, 2);
                 scanItem(48950, 7);
@@ -67,6 +70,8 @@ public class View {
                         System.out.println("| Running Total: "+ runningTotal + ":-");
                 } catch (NoSuchItemException e) {
                         System.out.println("---Invalid ItemID Entered---");
+                } catch (InventoryException e){
+                        System.out.println("---Something went wrong, please try again---");
                 }
         }
 }

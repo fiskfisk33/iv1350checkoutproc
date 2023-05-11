@@ -2,6 +2,7 @@ package se.kth.iv1350.checkoutproc.view;
 
 import se.kth.iv1350.checkoutproc.controller.Controller;
 import se.kth.iv1350.checkoutproc.integration.ItemDTO;
+import se.kth.iv1350.checkoutproc.controller.NoSuchItemException;
 import se.kth.iv1350.checkoutproc.model.Change;
 import se.kth.iv1350.checkoutproc.model.Payment;
 import se.kth.iv1350.checkoutproc.model.SaleInfoDTO;
@@ -55,18 +56,17 @@ public class View {
                 scanItem(itemID, 1);
         }
         private void scanItem(int itemID, int amount){
-                ItemDTO item = controller.addItem(itemID, amount);
-
                 System.out.println("-------------------------");
-                if(item == null){
+                try {
+                        ItemDTO item = controller.addItem(itemID, amount);
+                        System.out.println("| " + amount + " x "+ item.getDescription());
+                        BigDecimal itemPrice = item.getPrice().multiply(BigDecimal.ONE.add(item.getVat())).setScale(2, RoundingMode.HALF_DOWN);
+                        System.out.println("| Price à:       " + itemPrice + ":-");
+                        SaleInfoDTO saleInfoDTO = controller.fetchSaleInfo();
+                        BigDecimal runningTotal = saleInfoDTO.getTotalPrice().add(saleInfoDTO.getTotalVAT());
+                        System.out.println("| Running Total: "+ runningTotal + ":-");
+                } catch (NoSuchItemException e) {
                         System.out.println("---Invalid ItemID Entered---");
-                        return;
                 }
-                System.out.println("| " + amount + " x "+ item.getDescription());
-                BigDecimal itemPrice = item.getPrice().multiply(BigDecimal.ONE.add(item.getVat())).setScale(2, RoundingMode.HALF_DOWN);
-                System.out.println("| Price à:       " + itemPrice + ":-");
-                SaleInfoDTO saleInfoDTO = controller.fetchSaleInfo();
-                BigDecimal runningTotal = saleInfoDTO.getTotalPrice().add(saleInfoDTO.getTotalVAT());
-                System.out.println("| Running Total: "+ runningTotal + ":-");
         }
 }

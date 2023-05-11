@@ -46,9 +46,13 @@ public class InventoryHandler {
          * @param itemID uniue item ID
          * @return {@link ItemDTO} with item data from db
          * if no such item exists, returns null.
+         * @throws ItemNotInDbException if no item with supplied itemID found in db
          */
-        public ItemDTO fetchItem(int itemID){
-                return items.get(itemID);
+        public ItemDTO fetchItem(int itemID) throws ItemNotInDbException {
+                 ItemDTO item = items.get(itemID);
+                 if (item == null)
+                         throw new ItemNotInDbException("Item with id \"" + itemID + "\" not found in db");
+                 return item;
         }
 
         /**

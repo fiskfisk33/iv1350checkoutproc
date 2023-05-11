@@ -37,23 +37,27 @@ public class Controller {
          * @param count the amount of the item to be added
          *
          * @return the item with the specified identifier,
-         * if such item does not exist, no item will be added, and {@link null} will be returned.
+         *         if such item does not exist, no item will be added, and {@link null} will be returned.
+         * @throws NoSuchItemException if no item matching the supplied itemID is found
          */
-        public ItemDTO addItem(int itemID, int count){
-                ItemDTO itemData = inventoryHandler.fetchItem(itemID);
-                if(itemData == null)
-                        return null;
-                sale.addItems(itemData, count);
-                return itemData;
+        public ItemDTO addItem(int itemID, int count) throws NoSuchItemException {
+                try {
+                        ItemDTO itemData = inventoryHandler.fetchItem(itemID);
+                        sale.addItems(itemData, count);
+                        return itemData;
+                } catch (ItemNotInDbException e) {
+                        throw new NoSuchItemException("No item with ID "+itemID+" found", e);
+                }
         }
+
 
 
         /**
          * adds a single item to the {@link Sale}
-         * @param itemID unique item idenifier
-         * @return the item added, null if no such item exists
+         * {@inheritDoc}
          */
-        public ItemDTO addItem(int itemID){
+
+        public ItemDTO addItem(int itemID) throws NoSuchItemException {
                return addItem(itemID, 1);
         }
 

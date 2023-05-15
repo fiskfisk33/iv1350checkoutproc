@@ -5,12 +5,15 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import se.kth.iv1350.checkoutproc.integration.ItemDTO;
 import se.kth.iv1350.checkoutproc.model.Change;
+import se.kth.iv1350.checkoutproc.model.Item;
 import se.kth.iv1350.checkoutproc.model.Payment;
 import se.kth.iv1350.checkoutproc.model.SaleInfoDTO;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -35,12 +38,18 @@ class ControllerTest {
                 //Här vill jag testa efter NullPointerExceptions, men får inte ännu
                 controller.initiateSale();
 
-                controller.addItem(itemID);
-                assertEquals(itemID, controller.addItem(itemID).getItemID());
+                try {
+                        controller.addItem(itemID);
+                        assertEquals(itemID, controller.addItem(itemID).getItemID());
+                } catch (NoSuchItemException e) {
+                        throw new RuntimeException(e);
+                } catch (InventoryException e) {
+                        throw new RuntimeException(e);
+                }
         }
 
         @Test
-        void addItem() {
+        void addItem() throws InventoryException, NoSuchItemException {
 
                 //controller.addItem(itemID);
                 //exception expected
@@ -56,11 +65,16 @@ class ControllerTest {
                 SaleInfoDTO saleInfoDTO2 = controller.fetchSaleInfo();
                 assertEquals(BigDecimal.valueOf(1299*4), saleInfoDTO2.getTotalPrice());
 
+                assertThrows(NoSuchItemException.class,
+                        ()-> controller.addItem(1111), "no or wrong exception thrown");
+                assertThrows(InventoryException.class,
+                        ()-> controller.addItem(218), "no or wrong exception thrown");
+
 
         }
 
         @Test
-        void fetchSaleInfo() {
+        void fetchSaleInfo() throws InventoryException, NoSuchItemException {
                 Instant bcreation = Instant.now();
                 controller.initiateSale();
                 Instant acreation = Instant.now();
@@ -79,7 +93,7 @@ class ControllerTest {
         }
 
         @Test
-        void endSale() {
+        void endSale() throws InventoryException, NoSuchItemException {
                 controller.initiateSale();
                 controller.addItem(itemID);
                 Payment payment = new Payment(BigDecimal.valueOf(2000));
@@ -90,7 +104,7 @@ class ControllerTest {
         }
 
         @Test
-        void requestDiscount() {
+        void requestDiscount() throws InventoryException, NoSuchItemException {
                 controller.initiateSale();
                 controller.addItem(itemID);
                 Payment payment = new Payment(BigDecimal.valueOf(2000));

@@ -13,7 +13,7 @@ class InventoryHandlerTest {
 
         @BeforeEach
         void setUp() {
-                inventoryHandler = new InventoryHandler();
+                inventoryHandler = new InventoryHandler(new LogFileWriter("test"));
         }
 
         @AfterEach
@@ -22,9 +22,11 @@ class InventoryHandlerTest {
         }
 
         @Test
-        void fetchItem() {
-                ItemDTO itemNotFound = inventoryHandler.fetchItem(1111);
-                assertNull(itemNotFound);
+        void fetchItem() throws ItemNotInDbException {
+                assertThrows(ItemNotInDbException.class,
+                        ()-> inventoryHandler.fetchItem(1111), "no or wrong exception thrown");
+                assertThrows(DbUnreachableException.class,
+                        ()-> inventoryHandler.fetchItem(218), "no or wrong exception thrown");
                 ItemDTO itemDrill = inventoryHandler.fetchItem(12345);
                 assertEquals(new BigDecimal(1299), itemDrill.getPrice(), "wrong item");
                 ItemDTO itemSwallow = inventoryHandler.fetchItem(38940);

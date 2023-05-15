@@ -22,9 +22,9 @@ class SaleTest {
         ItemDTO itemDTO3;
 
         @BeforeEach
-        void setUp() {
+        void setUp() throws ItemNotInDbException {
                 AccountingHandler accountingHandler = new AccountingHandler();
-                InventoryHandler inventoryHandler = new InventoryHandler();
+                InventoryHandler inventoryHandler = new InventoryHandler(new LogFileWriter("test"));
                 Printer printer = new Printer();
                 sale = new Sale(accountingHandler,inventoryHandler,printer);
 

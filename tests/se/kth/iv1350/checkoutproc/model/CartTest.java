@@ -5,8 +5,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import se.kth.iv1350.checkoutproc.integration.InventoryHandler;
 import se.kth.iv1350.checkoutproc.integration.ItemDTO;
+import se.kth.iv1350.checkoutproc.integration.ItemNotInDbException;
+import se.kth.iv1350.checkoutproc.integration.LogFileWriter;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -21,10 +24,14 @@ class CartTest {
         @BeforeEach
         void setUp() {
                 cart = new Cart();
-                InventoryHandler inventoryHandler = new InventoryHandler();
-                itemDTO1 = inventoryHandler.fetchItem(12345);
-                itemDTO2 = inventoryHandler.fetchItem(1324);
-                itemDTO3 = inventoryHandler.fetchItem(38940);
+                InventoryHandler inventoryHandler = new InventoryHandler(new LogFileWriter("test"));
+                try {
+                        itemDTO1 = inventoryHandler.fetchItem(12345);
+                        itemDTO2 = inventoryHandler.fetchItem(1324);
+                        itemDTO3 = inventoryHandler.fetchItem(38940);
+                } catch (ItemNotInDbException e) {
+                        throw new RuntimeException(e);
+                }
         }
 
         @AfterEach
@@ -77,10 +84,10 @@ class CartTest {
                 assertEquals(vat1, vat1test, "wrong vat");
 
                 cart.addItems(itemDTO2, 16);
-                BigDecimal vat2 = itemDTO2.getPrice()
+                BigDecimal vat2 = (itemDTO2.getPrice()
                                         .multiply(BigDecimal.valueOf(16))
                                         .multiply(itemDTO2.getVat())
-                                        .add(vat1);
+                                        .add(vat1)).setScale(2, RoundingMode.HALF_DOWN);
                 BigDecimal vat2test = cart.getTotalVAT();
                 assertEquals(vat2, vat2test, "wrong vat");
 

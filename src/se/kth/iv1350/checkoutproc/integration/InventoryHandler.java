@@ -6,8 +6,10 @@ import java.util.HashMap;
 
 /**
  * this class is the interface between the inventory database and the rest of the program.
+ * this class is now a singleton
  */
 public class InventoryHandler {
+
 
         /**
          * for now this class is mostly placeholder.

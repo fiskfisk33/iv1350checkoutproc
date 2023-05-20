@@ -1,0 +1,60 @@
+Task 1;
+a)
+add exception in InventoryHandler
+checked because business logic.iiiiikl
+throw it in InventoryHandler.fetchItem();
+
+we can simply remove the previous lines
+                if(itemData == null)
+                        return null;
+in Controller.addItem
+We could just let the exception pass further but thus far View ONLY has dependencies in controller,
+In order to keep it that way we repackage the exception before passing it on.
+
+in View.scanItem we previously had
+                if(item == null){
+                        System.out.println("---Invalid ItemID Entered---");
+                        return;
+                }
+we can replace this with a try/catch block
+
+b)
+this time we need to print to log!
+Lets put the log writer in integration, it seems to fit the "external system" bill
+add Logger interface and LogFileWriter class
+this exception will be unchecked, as it represents an actuall program error.
+we will catch it in controller though, and throw it wrapped in a checked exception to the view.
+view will have knowledge about the wrapper exception and give relevant info to the user
+InventoryHandler will log the exception using Logger
+
+add Logger to InventoryHandler
+initialize it in the constructor
+log the error
+add a couple of the "error" items to View
+
+in InventoryHandlerTest the lines
+                ItemDTO itemNotFound = inventoryHandler.fetchItem(1111);
+                assertNull(itemNotFound);
+were changed to
+                assertThrows(ItemNotInDbException.class,
+                        ()-> inventoryHandler.fetchItem(1111),"No or wrong Exception thrown");
+to test for the Exception
+a similar line was also added to test for the made up "database not reachable" error
+
+similar tests added in ControllerTest.addItem()
+
+Task 2:
+
+a
+added the observer interface in the model package
+the mentioned classes implement SalePaymentObserver
+added the observers in the sale class, that's where the payment happens.
+added addPaymentObserver to sale and controller
+added notifyPaymentObserver
+called notifyPaymentObserver from endSale()
+
+add both observers to Sale every time
+lift out sake creation to private method in view
+
+b;
+Lets turn the inventoryHandler into a singleton

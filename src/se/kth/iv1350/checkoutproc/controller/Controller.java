@@ -8,10 +8,10 @@ import se.kth.iv1350.checkoutproc.model.*;
  * and the internal model.
  */
 public class Controller {
-       private Printer printer;
-       private InventoryHandler inventoryHandler;
-       private DiscountHandler discountHandler;
-       private AccountingHandler accountingHandler;
+       private final Printer printer;
+       private final InventoryHandler inventoryHandler;
+       private final DiscountHandler discountHandler;
+       private final AccountingHandler accountingHandler;
        private Sale sale;
 
         /**
@@ -30,6 +30,7 @@ public class Controller {
          */
        public void initiateSale(){
                sale = new Sale(accountingHandler, inventoryHandler, printer);
+
        }
 
         /**
@@ -77,11 +78,13 @@ public class Controller {
                 return sale.fetchSaleInfo();
         }
 
-        /**d returns the amount of change
-         *          * @param payment the payment
-         *          * @return the amount of change
-         * This method ends the sale an to be given back to the customer
-         */
+        /**
+        *   This method ends the sale and returns the amount of change
+        * to be given back to the customer
+        * @param payment the payment
+        * @return the amount of change
+        *
+        */
         public Change endSale(Payment payment){
                 Change change = sale.endSale(payment);
                 sale = null;
@@ -95,6 +98,16 @@ public class Controller {
         public void requestDiscount(int customerID){
                DiscountsDTO discountsDTO = discountHandler.fetchDiscounts(customerID);
                sale.applyDiscounts(discountsDTO);
+        }
+
+        /**
+         * Add a an observer that will be notified with the revenue of the sale
+         * whenever the sale is finalized.
+         * TODO this throws a null pointer exception when called without a sale being active. worth reviewing.
+         * @param salePaymentObserver the observer.
+         */
+        public void addSalePaymentObserver(SalePaymentObserver salePaymentObserver){
+                sale.addPaymentObserver(salePaymentObserver);
         }
 
 }

@@ -4,6 +4,8 @@ import se.kth.iv1350.checkoutproc.integration.*;
 
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Sale {
         private final Cart cart;
@@ -14,6 +16,7 @@ public class Sale {
         private Payment payment;
         private Change change;
         private boolean finalized;
+        private List<SalePaymentObserver> paymentObservers = new ArrayList<>();
 
         /**
          * models a sale,
@@ -30,6 +33,8 @@ public class Sale {
                 cart = new Cart();
                 finalized = false;
         }
+
+
 
         /**
          * add one {@link Item}, or multiples of it, to the cart of items to be sold.
@@ -81,6 +86,8 @@ public class Sale {
                 Receipt receipt = new Receipt(fetchSaleInfo());
                 printer.printReceipt(receipt);
 
+                notifyPaymentObservers();
+
                 return this.change;
         }
 
@@ -96,5 +103,25 @@ public class Sale {
                         }
                 }
                 cart.applyCartDiscount(discountsDTO.getCartDiscount());
+        }
+
+        /**
+         * adds a SalePaymentObserver to the list,
+         * will be notified whenever a sale is completed (payment is recieved).
+         * @param obs the observer
+         */
+        public void addPaymentObserver(SalePaymentObserver obs){
+                paymentObservers.add(obs);
+        }
+
+        /**
+         * will be called once when the sale finalizes
+         * notifies all observers about the revenue.
+         */
+        public void notifyPaymentObservers(){
+                for(SalePaymentObserver obs : paymentObservers){
+                        BigDecimal revenue = cart.getTotalPrice();
+                        obs.reportSaleRevenue(revenue);
+                }
         }
 }

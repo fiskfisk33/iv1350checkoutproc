@@ -17,6 +17,8 @@ import java.math.RoundingMode;
  */
 public class View {
         private Controller controller;
+        private TotalRevenueView totalRevenueView;
+        private TotalRevenueFileOutput totalRevenueFileOutput;
 
         /**
          * creates a view, with a {@link Controller} instance it uses to communicate with the program
@@ -24,6 +26,12 @@ public class View {
          */
         public View(Controller controller) {
                 this.controller = controller;
+                totalRevenueFileOutput = new TotalRevenueFileOutput("revenue");
+                totalRevenueView = new TotalRevenueView();
+                dryRun();
+                dryRun();
+                dryRun();
+                dryRun();
                 dryRun();
         }
 
@@ -32,7 +40,7 @@ public class View {
          * it goes through the motions of an example sale being carried out.
          */
         private void dryRun(){
-                controller.initiateSale();
+                initiateSale();
                 System.out.println("---Ready To Scan---");
                 scanItem(12345);
                 scanItem(38940);
@@ -74,4 +82,10 @@ public class View {
                         System.out.println("---Something went wrong, please try again---");
                 }
         }
+        private void initiateSale(){
+                controller.initiateSale();
+                controller.addSalePaymentObserver(totalRevenueFileOutput);
+                controller.addSalePaymentObserver(totalRevenueView);
+        }
+
 }

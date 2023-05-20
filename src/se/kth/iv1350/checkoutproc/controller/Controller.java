@@ -20,7 +20,8 @@ public class Controller {
        public Controller(){
                LogFileWriter logFileWriter = new LogFileWriter("runtime");
                printer = new Printer();
-               inventoryHandler = new InventoryHandler(logFileWriter);
+               inventoryHandler = InventoryHandler.getInventoryHandler();
+               inventoryHandler.addLogger(logFileWriter);
                discountHandler = new DiscountHandler();
                accountingHandler = new AccountingHandler();
        }

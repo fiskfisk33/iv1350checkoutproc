@@ -24,7 +24,8 @@ class CartTest {
         @BeforeEach
         void setUp() {
                 cart = new Cart();
-                InventoryHandler inventoryHandler = new InventoryHandler(new LogFileWriter("test"));
+                InventoryHandler inventoryHandler = InventoryHandler.getInventoryHandler();
+                inventoryHandler.addLogger(new LogFileWriter("test"));
                 try {
                         itemDTO1 = inventoryHandler.fetchItem(12345);
                         itemDTO2 = inventoryHandler.fetchItem(1324);

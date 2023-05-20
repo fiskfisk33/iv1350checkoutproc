@@ -13,7 +13,8 @@ class InventoryHandlerTest {
 
         @BeforeEach
         void setUp() {
-                inventoryHandler = new InventoryHandler(new LogFileWriter("test"));
+                inventoryHandler = InventoryHandler.getInventoryHandler();
+                inventoryHandler.addLogger(new LogFileWriter("test"));
         }
 
         @AfterEach

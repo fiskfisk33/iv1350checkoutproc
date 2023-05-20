@@ -58,3 +58,8 @@ lift out sake creation to private method in view
 
 b;
 Lets turn the inventoryHandler into a singleton
+have to move the recieving of a logger away from the constructor
+now it instad uses addLogger and keeps a set of loggers, when logging it logs to all loggers
+otherwise we just follow the script.
+
+Log already follows the strategy pattern.

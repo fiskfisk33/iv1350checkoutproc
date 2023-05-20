@@ -3,12 +3,15 @@ package se.kth.iv1350.checkoutproc.integration;
 import java.math.BigDecimal;
 import java.util.AbstractMap;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * this class is the interface between the inventory database and the rest of the program.
  * this class is now a singleton
  */
 public class InventoryHandler {
+        private static final InventoryHandler INVENTORY_HANDLER = new InventoryHandler();
 
 
         /**
@@ -17,14 +20,13 @@ public class InventoryHandler {
          * we fake it in this class.
          */
         private AbstractMap<Integer, ItemDTO> items;
-        private Logger logger;
+        private Set<Logger> loggers = new HashSet<>();
 
         /**
          * placeholder constructor
          * This creates a "fake database" with a few items in it.
          */
-        public InventoryHandler(Logger logger){
-                this.logger = logger;
+        private InventoryHandler(){
                 //TODO this is placeholder stuff
                 items = new HashMap<>();
                 createPlaceholderEntry(new ItemDTO(12345, "Cordless Drill", new BigDecimal(.25), new BigDecimal(1299)));
@@ -34,6 +36,21 @@ public class InventoryHandler {
                 createPlaceholderEntry(new ItemDTO(78397, "Portable Haircut", new BigDecimal(.06), new BigDecimal(1599)));
                 createPlaceholderEntry(new ItemDTO(48950, "Lorem Ipsum", new BigDecimal(.06), new BigDecimal("39.50")));
                 createPlaceholderEntry(new ItemDTO(38940, "Unladen African Swallow", new BigDecimal(.25), new BigDecimal(41)));
+        }
+
+        /**
+         * @return the only instance of this singleton.
+         */
+        public static InventoryHandler getInventoryHandler(){
+                return INVENTORY_HANDLER;
+        }
+
+        /**
+         * add a logger to the set of loggers this logs to
+         * @param logger the logger
+         */
+        public void addLogger (Logger logger){
+                loggers.add(logger);
         }
 
         /**
@@ -57,7 +74,7 @@ public class InventoryHandler {
                  if(itemID == 218){
                          //this simulates a database unreachable error
                          RuntimeException e = new DbUnreachableException("database not responding to request");
-                         logger.log(e.toString());
+                         loggers.forEach( (logger) -> logger.log(e.toString()) );
                          throw e;
                  }
                  ItemDTO item = items.get(itemID);

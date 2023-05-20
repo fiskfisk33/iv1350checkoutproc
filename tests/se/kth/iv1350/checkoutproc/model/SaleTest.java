@@ -7,7 +7,6 @@ import se.kth.iv1350.checkoutproc.integration.*;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.time.Instant;
 import java.util.AbstractMap;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -24,7 +23,8 @@ class SaleTest {
         @BeforeEach
         void setUp() throws ItemNotInDbException {
                 AccountingHandler accountingHandler = new AccountingHandler();
-                InventoryHandler inventoryHandler = new InventoryHandler(new LogFileWriter("test"));
+                InventoryHandler inventoryHandler = InventoryHandler.getInventoryHandler();
+                inventoryHandler.addLogger(new LogFileWriter("test"));
                 Printer printer = new Printer();
                 sale = new Sale(accountingHandler,inventoryHandler,printer);
 
@@ -84,10 +84,6 @@ class SaleTest {
 
                 assertEquals(payment, saledto2.getPayment());
 
-                Change expectedCiasdfsadfhange = new Change(
-                        payment.getAmount().subtract(
-                                expectedPrice.add(expectedVAT)));
-
                 BigDecimal expectedChange = payment.getAmount().subtract(expectedPrice.add(expectedVAT));
 
                 Change actualChange = saledto2.getChange();
@@ -117,8 +113,6 @@ class SaleTest {
                 sale.addItems(item3, 2);
                 SaleInfoDTO saleInfoDTObefore = sale.fetchSaleInfo();
 
-                BigDecimal priceBefore = saleInfoDTObefore.getTotalPrice();
-
                 sale.applyDiscounts(discountsDTO);
 
                 SaleInfoDTO saleInfoDTOafter = sale.fetchSaleInfo();
@@ -129,7 +123,7 @@ class SaleTest {
                         10 * 1 +
                         100 * 2) * 0.75
                  */
-                BigDecimal expectedPriceAfter = BigDecimal.valueOf((10*2+10*1+100*2)*0.75).setScale(2,RoundingMode.HALF_DOWN);
+                BigDecimal expectedPriceAfter = BigDecimal.valueOf((10*2+10+100*2)*0.75).setScale(2,RoundingMode.HALF_DOWN);
                 assertEquals(expectedPriceAfter, priceAfter, "wrong price after discount");
 
                 BigDecimal vatAfter = saleInfoDTOafter.getTotalVAT();

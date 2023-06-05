@@ -1,7 +1,7 @@
 Task 1;
 a)
 add exception in InventoryHandler
-checked because business logic.iiiiikl
+checked because business logic
 throw it in InventoryHandler.fetchItem();
 
 we can simply remove the previous lines
@@ -11,8 +11,8 @@ in Controller.addItem
 We could just let the exception pass further but thus far View ONLY has dependencies in controller,
 In order to keep it that way we repackage the exception before passing it on.
 
-in View.scanItem we previously had
-                if(item == null){
+ in View.scanItem we previously had
+                if(item == n ull){
                         System.out.println("---Invalid ItemID Entered---");
                         return;
                 }

@@ -1,0 +1,33 @@
+1
+added an abstract class TotalRevenueTemplate in view package with the pseudocode
+it implements the observer
+implement it in the observers instead of the interface
+remove reportSaleRevenue override in the observers
+
+2
+Took approach similar to the example, used HashSet.
+Composed was more code, but with more control, needs more code to implement a larger chunk of the Set it builds on.
+Inherited didn't even have to override the addAll, since the implementation upstream uses the add method
+
+3
+..but my main method doesn't print?
+created ViewTest
+reassign System.out to a stream we can manipulate (well, programmatically read from);
+
+testing view is VERY tricky since everything but the constructor is private..
+It really is no different here than testing main itself.
+
+created MainTest
+om main printar "---Ready To Scan---" så har main startat programmet som den ska.
+
+
+VieTest
+Output is quite large so put the expected output in a text file
+It does the comparison line by line, and skips specific lines tha includes timestamps
+as they will differ every rum.
+
+this means the only way we can glean output is by running the constructor.
+
+
+CartPrintTest
+test the printing of the cart

@@ -1,0 +1,390 @@
+---Ready To Scan---
+-------------------------
+| 1 x Cordless Drill
+| Price à:       1623.75:-
+| Running Total: 1623.75:-
+-------------------------
+| 1 x Unladen African Swallow
+| Price à:       51.25:-
+| Running Total: 1675.00:-
+-------------------------
+---Something went wrong, please try again---
+-------------------------
+---Invalid ItemID Entered---
+-------------------------
+| 10 x Lorem Ipsum
+| Price à:       41.87:-
+| Running Total: 2093.70:-
+-------------------------
+---Invalid ItemID Entered---
+-------------------------
+| 1 x Unladen African Swallow
+| Price à:       51.25:-
+| Running Total: 2144.95:-
+-------------------------
+---Invalid ItemID Entered---
+-------------------------
+| 3 x Camping Tent
+| Price à:       623.75:-
+| Running Total: 4016.20:-
+-------------------------
+---Something went wrong, please try again---
+-------------------------
+| 1 x Three Blind Mice
+| Price à:       895.89:-
+| Running Total: 4912.09:-
+-------------------------
+| 2 x Portable Haircut
+| Price à:       1694.94:-
+| Running Total: 8301.97:-
+-------------------------
+| 7 x Lorem Ipsum
+| Price à:       41.87:-
+| Running Total: 8595.06:-
+-------------------------
+| Recieved payment:10000kr
+
+*Receipt:************************
+* 2023-06-03T07:37:32.685187686Z
+* -
+* 17 x Lorem Ipsum  à 41.87
+*  = 711.79
+*
+* 1 x Three Blind Mice  à 895.89
+*  = 895.89
+*
+* 2 x Unladen African Swallow  à 51.25
+*  = 102.50
+*
+* 3 x Camping Tent  à 623.75
+*  = 1871.25
+*
+* 2 x Portable Haircut  à 1694.94
+*  = 3389.88
+*
+* 1 x Cordless Drill  à 1623.75
+*  = 1623.75
+*
+***Gross: 7547.40
+***VAT  : 1047.66
+***Total: 8595.06
+***Paid : 10000
+***Change : 1404.94
+**********************************************
+
+****Revenue****
+7547.40
+****       ****
+| Change: 1404.94
+---Ready To Scan---
+-------------------------
+| 1 x Cordless Drill
+| Price à:       1623.75:-
+| Running Total: 1623.75:-
+-------------------------
+| 1 x Unladen African Swallow
+| Price à:       51.25:-
+| Running Total: 1675.00:-
+-------------------------
+---Something went wrong, please try again---
+-------------------------
+---Invalid ItemID Entered---
+-------------------------
+| 10 x Lorem Ipsum
+| Price à:       41.87:-
+| Running Total: 2093.70:-
+-------------------------
+---Invalid ItemID Entered---
+-------------------------
+| 1 x Unladen African Swallow
+| Price à:       51.25:-
+| Running Total: 2144.95:-
+-------------------------
+---Invalid ItemID Entered---
+-------------------------
+| 3 x Camping Tent
+| Price à:       623.75:-
+| Running Total: 4016.20:-
+-------------------------
+---Something went wrong, please try again---
+-------------------------
+| 1 x Three Blind Mice
+| Price à:       895.89:-
+| Running Total: 4912.09:-
+-------------------------
+| 2 x Portable Haircut
+| Price à:       1694.94:-
+| Running Total: 8301.97:-
+-------------------------
+| 7 x Lorem Ipsum
+| Price à:       41.87:-
+| Running Total: 8595.06:-
+-------------------------
+| Recieved payment:10000kr
+
+*Receipt:************************
+* 2023-06-03T07:37:32.714803018Z
+* -
+* 1 x Three Blind Mice  à 895.89
+*  = 895.89
+*
+* 17 x Lorem Ipsum  à 41.87
+*  = 711.79
+*
+* 1 x Cordless Drill  à 1623.75
+*  = 1623.75
+*
+* 2 x Portable Haircut  à 1694.94
+*  = 3389.88
+*
+* 3 x Camping Tent  à 623.75
+*  = 1871.25
+*
+* 2 x Unladen African Swallow  à 51.25
+*  = 102.50
+*
+***Gross: 7547.40
+***VAT  : 1047.66
+***Total: 8595.06
+***Paid : 10000
+***Change : 1404.94
+**********************************************
+
+****Revenue****
+15094.80
+****       ****
+| Change: 1404.94
+---Ready To Scan---
+-------------------------
+| 1 x Cordless Drill
+| Price à:       1623.75:-
+| Running Total: 1623.75:-
+-------------------------
+| 1 x Unladen African Swallow
+| Price à:       51.25:-
+| Running Total: 1675.00:-
+-------------------------
+---Something went wrong, please try again---
+-------------------------
+---Invalid ItemID Entered---
+-------------------------
+| 10 x Lorem Ipsum
+| Price à:       41.87:-
+| Running Total: 2093.70:-
+-------------------------
+---Invalid ItemID Entered---
+-------------------------
+| 1 x Unladen African Swallow
+| Price à:       51.25:-
+| Running Total: 2144.95:-
+-------------------------
+---Invalid ItemID Entered---
+-------------------------
+| 3 x Camping Tent
+| Price à:       623.75:-
+| Running Total: 4016.20:-
+-------------------------
+---Something went wrong, please try again---
+-------------------------
+| 1 x Three Blind Mice
+| Price à:       895.89:-
+| Running Total: 4912.09:-
+-------------------------
+| 2 x Portable Haircut
+| Price à:       1694.94:-
+| Running Total: 8301.97:-
+-------------------------
+| 7 x Lorem Ipsum
+| Price à:       41.87:-
+| Running Total: 8595.06:-
+-------------------------
+| Recieved payment:10000kr
+
+*Receipt:************************
+* 2023-06-03T07:37:32.716932133Z
+* -
+* 17 x Lorem Ipsum  à 41.87
+*  = 711.79
+*
+* 1 x Cordless Drill  à 1623.75
+*  = 1623.75
+*
+* 3 x Camping Tent  à 623.75
+*  = 1871.25
+*
+* 2 x Portable Haircut  à 1694.94
+*  = 3389.88
+*
+* 1 x Three Blind Mice  à 895.89
+*  = 895.89
+*
+* 2 x Unladen African Swallow  à 51.25
+*  = 102.50
+*
+***Gross: 7547.40
+***VAT  : 1047.66
+***Total: 8595.06
+***Paid : 10000
+***Change : 1404.94
+**********************************************
+
+****Revenue****
+22642.20
+****       ****
+| Change: 1404.94
+---Ready To Scan---
+-------------------------
+| 1 x Cordless Drill
+| Price à:       1623.75:-
+| Running Total: 1623.75:-
+-------------------------
+| 1 x Unladen African Swallow
+| Price à:       51.25:-
+| Running Total: 1675.00:-
+-------------------------
+---Something went wrong, please try again---
+-------------------------
+---Invalid ItemID Entered---
+-------------------------
+| 10 x Lorem Ipsum
+| Price à:       41.87:-
+| Running Total: 2093.70:-
+-------------------------
+---Invalid ItemID Entered---
+-------------------------
+| 1 x Unladen African Swallow
+| Price à:       51.25:-
+| Running Total: 2144.95:-
+-------------------------
+---Invalid ItemID Entered---
+-------------------------
+| 3 x Camping Tent
+| Price à:       623.75:-
+| Running Total: 4016.20:-
+-------------------------
+---Something went wrong, please try again---
+-------------------------
+| 1 x Three Blind Mice
+| Price à:       895.89:-
+| Running Total: 4912.09:-
+-------------------------
+| 2 x Portable Haircut
+| Price à:       1694.94:-
+| Running Total: 8301.97:-
+-------------------------
+| 7 x Lorem Ipsum
+| Price à:       41.87:-
+| Running Total: 8595.06:-
+-------------------------
+| Recieved payment:10000kr
+
+*Receipt:************************
+* 2023-06-03T07:37:32.718907876Z
+* -
+* 2 x Unladen African Swallow  à 51.25
+*  = 102.50
+*
+* 17 x Lorem Ipsum  à 41.87
+*  = 711.79
+*
+* 1 x Three Blind Mice  à 895.89
+*  = 895.89
+*
+* 2 x Portable Haircut  à 1694.94
+*  = 3389.88
+*
+* 3 x Camping Tent  à 623.75
+*  = 1871.25
+*
+* 1 x Cordless Drill  à 1623.75
+*  = 1623.75
+*
+***Gross: 7547.40
+***VAT  : 1047.66
+***Total: 8595.06
+***Paid : 10000
+***Change : 1404.94
+**********************************************
+
+****Revenue****
+30189.60
+****       ****
+| Change: 1404.94
+---Ready To Scan---
+-------------------------
+| 1 x Cordless Drill
+| Price à:       1623.75:-
+| Running Total: 1623.75:-
+-------------------------
+| 1 x Unladen African Swallow
+| Price à:       51.25:-
+| Running Total: 1675.00:-
+-------------------------
+---Something went wrong, please try again---
+-------------------------
+---Invalid ItemID Entered---
+-------------------------
+| 10 x Lorem Ipsum
+| Price à:       41.87:-
+| Running Total: 2093.70:-
+-------------------------
+---Invalid ItemID Entered---
+-------------------------
+| 1 x Unladen African Swallow
+| Price à:       51.25:-
+| Running Total: 2144.95:-
+-------------------------
+---Invalid ItemID Entered---
+-------------------------
+| 3 x Camping Tent
+| Price à:       623.75:-
+| Running Total: 4016.20:-
+-------------------------
+---Something went wrong, please try again---
+-------------------------
+| 1 x Three Blind Mice
+| Price à:       895.89:-
+| Running Total: 4912.09:-
+-------------------------
+| 2 x Portable Haircut
+| Price à:       1694.94:-
+| Running Total: 8301.97:-
+-------------------------
+| 7 x Lorem Ipsum
+| Price à:       41.87:-
+| Running Total: 8595.06:-
+-------------------------
+| Recieved payment:10000kr
+
+*Receipt:************************
+* 2023-06-03T07:37:32.720975809Z
+* -
+* 2 x Portable Haircut  à 1694.94
+*  = 3389.88
+*
+* 2 x Unladen African Swallow  à 51.25
+*  = 102.50
+*
+* 1 x Three Blind Mice  à 895.89
+*  = 895.89
+*
+* 1 x Cordless Drill  à 1623.75
+*  = 1623.75
+*
+* 3 x Camping Tent  à 623.75
+*  = 1871.25
+*
+* 17 x Lorem Ipsum  à 41.87
+*  = 711.79
+*
+***Gross: 7547.40
+***VAT  : 1047.66
+***Total: 8595.06
+***Paid : 10000
+***Change : 1404.94
+**********************************************
+
+****Revenue****
+37737.00
+****       ****
+| Change: 1404.94

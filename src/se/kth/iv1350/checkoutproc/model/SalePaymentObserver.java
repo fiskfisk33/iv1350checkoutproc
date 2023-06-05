@@ -11,4 +11,6 @@ public interface SalePaymentObserver {
          * @param saleRevenue the sale revenue
          */
         public void reportSaleRevenue(BigDecimal saleRevenue);
+
+
 }

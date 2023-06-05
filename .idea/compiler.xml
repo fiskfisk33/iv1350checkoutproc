@@ -9,8 +9,5 @@
         <module name="checkoutproc" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="checkoutproc" target="17" />
-    </bytecodeTargetLevel>
   </component>
 </project>

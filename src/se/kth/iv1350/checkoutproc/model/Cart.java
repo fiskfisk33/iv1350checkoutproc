@@ -18,7 +18,7 @@ public class Cart implements Iterable<Item>{
         /**
          * creates a Cart
          */
-        Cart() {
+        protected Cart() {
                 items = new HashMap<>();
                 cartDiscount = BigDecimal.ONE;
         }

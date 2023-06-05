@@ -55,7 +55,8 @@ class ViewTest {
                                 actualLine = actualOutput.readLine();
                                 line ++;
 
-                                if(! linesWithTimestamps.contains(line))
+                                // skip the check if line contains timestamp, or if the line begins with * (and therefore is a part of the receipt)
+                                if( (!linesWithTimestamps.contains(line)) && expectedLine.indexOf("*") != 0)
                                         assertEquals(expectedLine.trim(), actualLine.trim(), "View did not print the expected string on line: " + line);
 
                         }

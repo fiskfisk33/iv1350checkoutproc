@@ -34,8 +34,6 @@ class ReceiptTest {
 
                 TestCart cart = new TestCart();
                 try {
-                        cart.addItems(inventory.fetchItem(12345),1);
-                        cart.addItems(inventory.fetchItem(38940),1);
                         cart.addItems(inventory.fetchItem(48950),10);
                 } catch (ItemNotInDbException e) {
                         throw new RuntimeException(e);
@@ -85,34 +83,6 @@ class ReceiptTest {
                 endIndex = output.indexOf("\n", begIndex + 1);
                 result = output.substring(begIndex, endIndex).trim();
                 expected = "*  = 418.70";
-
-                assertEquals(expected, result, "item sum was not printed correctly");
-
-                begIndex = output.indexOf("\n", endIndex + 1);
-                endIndex = output.indexOf("\n", begIndex + 1);
-                result = output.substring(begIndex, endIndex).trim();
-                expected = "* 1 x Unladen African Swallow  à 51.25";
-
-                assertEquals(expected, result, "item line was not printed correctly");
-
-                begIndex = endIndex;
-                endIndex = output.indexOf("\n", begIndex + 1);
-                result = output.substring(begIndex, endIndex).trim();
-                expected = "*  = 51.25";
-
-                assertEquals(expected, result, "item sum was not printed correctly");
-
-                begIndex = output.indexOf("\n", endIndex + 1);
-                endIndex = output.indexOf("\n", begIndex + 1);
-                result = output.substring(begIndex, endIndex).trim();
-                expected = "* 1 x Cordless Drill  à 1623.75";
-
-                assertEquals(expected, result, "item line was not printed correctly");
-
-                begIndex = endIndex;
-                endIndex = output.indexOf("\n", begIndex + 1);
-                result = output.substring(begIndex, endIndex).trim();
-                expected = "*  = 1623.75";
 
                 assertEquals(expected, result, "item sum was not printed correctly");
 

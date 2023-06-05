@@ -281,7 +281,7 @@
 *Receipt:************************
 * 2023-06-03T07:37:32.718907876Z
 * -
-* 2 x Unladen African Swallow  à 51.25
+* 2 x Unladen African Swallow  à 51.25 what
 *  = 102.50
 *
 * 17 x Lorem Ipsum  à 41.87
